@@ -1,0 +1,26 @@
+﻿@model Tuan4_1911066620_NguyenDuyTan.Models.Sach
+
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2 style="font-weight:bold ;color :darkorchid;">Thông Tin Sách</h2>
+<fieldset>
+    <div class="display-label" style="font-weight:bold;">Mã Sách: @Model.masach</div><br />
+    <div class="display-label" style="font-weight:bold;">Mã Loại: @Model.maloai</div><br />
+    <div class="display-label" style="font-weight:bold;">Tên Sách: @Model.tensach</div><br />  
+    <div class="display-label" style="font-weight:bold;">Giá Bán: @Model.giaban</div><br />
+    <div class="display-label" style="font-weight:bold;">Ngày Cập Nhật: @Model.ngaycapnhat</div><br />
+    <div class="display-label" style="font-weight:bold;">Số Lượng Tồn: @Model.ngaycapnhat</div><br />
+    <div class="display-label" style="font-weight:bold;">Hình: <img src="@Model.hinh" style="width:25%;height:25%; object-fit:cover;" alt="Alternate Text" /> </div>
+
+</fieldset>
+@using (Html.BeginForm())
+{
+    <p>
+        @Html.ActionLink("Delete", "Delete", new { id = Model.masach }) |
+        @Html.ActionLink("Edit", "Edit", new { id = Model.masach }) |
+        @Html.ActionLink("Back to List", "ListSach")
+    </p>
+}
