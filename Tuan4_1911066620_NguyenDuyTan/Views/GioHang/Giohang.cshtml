@@ -3,9 +3,10 @@
     ViewBag.Title = "GioHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Gió hàng</h2>
+<h1 style="color: forestgreen; font-weight: bold; text-align: center " >Giỏ hàng</h1>
 <table class="table">
     <tr>
+
         <th>@Html.DisplayNameFor(model => model.tensach)</th>
         <th>@Html.DisplayNameFor(model => model.hinh)</th>
         <th>@Html.DisplayNameFor(model => model.giaban)</th>
@@ -29,7 +30,7 @@
                     <a href="@Url.Action("Detail", "Sach", new { @id = item.masach })"> Chi tiết</a> | @Html.ActionLink(" Xóa", "XoaGiohang", new { @id = item.masach })
                 </td>
                 <td>
-                    <input type="submit" value="Cập nhật" class="btn btn-success"/>
+                    <input type="submit" value="Cập nhật" class="btn btn-success" />
                 </td>
             }
         </tr>
@@ -46,9 +47,14 @@
             @Html.ActionLink("Xóa giỏ hàng", "XoaTatCaGioHang")
         </td>
     </tr>
+    <tr style="font-weight: bold; color:forestgreen; text-align:right">
+        <td colspan="5">
+             @Html.ActionLink("Tiếp Tục Mua Hàng", "Index", "Home")
+        </td>
+    </tr>
     <tr style="font-weight: bold; color:yellow; text-align:right">
         <td colspan="5">
-            @Html.ActionLink("Đặt hàng", "Dathang", "GioHang")
+            <button class="btn btn-info">@Html.ActionLink("Đặt hàng","DatHang","GioHang") </button>
         </td>
     </tr>
 </table>
